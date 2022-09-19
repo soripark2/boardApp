@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:s3ex/constantlist/forum3.dart';
+import 'package:s3ex/front/forum3.dart';
 import 'package:s3ex/constantlist/maincolor.dart';
-import '../constantlist/forum1.dart';
-import '../constantlist/forum2.dart';
+import 'forum1.dart';
+import 'forum2.dart';
 
 class CmntDrawer extends StatefulWidget {
   const CmntDrawer({Key? key}) : super(key: key);
