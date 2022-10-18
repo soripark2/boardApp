@@ -6,7 +6,7 @@ import 'package:amplify_storage_s3/amplify_storage_s3.dart';
 import 'dart:io';
 import 'package:path_provider/path_provider.dart';
 import 'amplifyconfiguration.dart';
-import 'front/cmntdrawer.dart';
+import 'front/bottomnavi.dart';
 
 void main() {
   runApp(const MyApp());
@@ -67,18 +67,12 @@ class _MyAppState extends State<MyApp> {
     return Authenticator(
       child: MaterialApp(
         builder: Authenticator.builder(),
-        home: isSignedIn?Text("signout"):CmntDrawer()
+        home: isSignedIn?Text("signout"):BottomNavi(),
+
       ),
     );
   }
 
-
-
-  Future<String> getCurrentUser() async {
-    final user = await Amplify.Auth.getCurrentUser();
-    print(user.userId + "," + user.username);
-    return user.username;
-  }
   Future<void> signOutCurrentUser() async {
     try {
       await Amplify.Auth.signOut();
