@@ -2,6 +2,7 @@
 import 'package:amplify_flutter/amplify_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:s3ex/constantlist/maincolor.dart';
+import 'package:s3ex/front/mypage.dart';
 
 class BottomNavi extends StatefulWidget {
   const BottomNavi({Key? key}) : super(key: key);
@@ -21,9 +22,7 @@ class _BottomNaviState extends State<BottomNavi> {
     Text(
       'Index 1: reels',
     ),
-    Text(
-      'Index 2: mypage',
-    ),
+    MyPage(),
   ];
 
   @override
@@ -51,10 +50,10 @@ class _BottomNaviState extends State<BottomNavi> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: _selectedIndex!=1?AppBar(
-        title: Text("동적 타이틀? ?"),
+        title: Text("DB title"),
         backgroundColor: MainColor.w,//MainColor.beige,
         foregroundColor: MainColor.b, // 글자색
-        surfaceTintColor: MainColor.p,
+        surfaceTintColor: MainColor.b,
       ):null,
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
@@ -76,8 +75,8 @@ class _BottomNaviState extends State<BottomNavi> {
         ],
         currentIndex: _selectedIndex,
         selectedItemColor: MainColor.y,
-        unselectedItemColor: MainColor.w,
-        backgroundColor: MainColor.p,
+        unselectedItemColor: MainColor.b,
+        backgroundColor: MainColor.w,
         onTap: _onItemTapped,
       ),
       drawer: Drawer(

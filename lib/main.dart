@@ -53,7 +53,7 @@ class _MyAppState extends State<MyApp> {
     await Amplify.addPlugins([storage, auth]);
     try {
       await Amplify.configure(amplifyconfig);
-      signOutCurrentUser();
+      //signOutCurrentUser();
       //createAndUploadFile();
     } on Exception catch (e) {
       print(
