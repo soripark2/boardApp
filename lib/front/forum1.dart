@@ -8,7 +8,7 @@ class Forum1 extends StatelessWidget{
         child: Column(
           children: [
             const Text(
-              "여기는 포럼1 입니다",
+              "여기는 포럼1 입니다@@",
               style: TextStyle(
                 fontFamily: "IBM Plex Sans KR",
                 fontSize: 23,
