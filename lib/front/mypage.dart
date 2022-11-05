@@ -14,15 +14,13 @@ class _MyPageState extends State<MyPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xffF8F8FA),
-      body:
-      //Stack(
-      //   children: <Widget>[
+      body: Column(
+        children: <Widget>[
           Container(
-            color: Colors.blue[600],
-            height: 150,
+            color: MainColor.y,
+            height: 110,
             child: Padding(
-              padding:  EdgeInsets.only(left: 30.0, right: 30.0, top: 30),
+              padding:  EdgeInsets.only(left: 20.0, right: 30.0, top: 20),
               child: Column(
                 children: <Widget>[
                   Row(
@@ -34,100 +32,60 @@ class _MyPageState extends State<MyPage> {
                             shape: BoxShape.circle,
                             image: DecorationImage(
                                 fit: BoxFit.cover,
-                                image: AssetImage("assets/test.png")
+                                image: NetworkImage('https://flutter.github.io/assets-for-api-docs/assets/widgets/owl.jpg')
                             ),
                         ),
                       ),
-                      SizedBox(width: 15),
+                      SizedBox(width: 30),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
-                          Text("Neil Sullivan Paul",),
-                          SizedBox(height: 3,),
+                          Text("나의 닉네임 메일주소 말고"),
+                          SizedBox(height: 6,),
                           Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: <Widget>[
-                              Row(
+                              Column(
                                 children: <Widget>[
-                                  // Image.asset(
-                                  //   "assets/test.png",
-                                  //   height: 3 * SizeConfig.heightMultiplier,
-                                  //   width: 3 * SizeConfig.widthMultiplier,
-                                  // ),
-                                  SizedBox(width: 6,),
-                                  Text("Protorix"),
+                                  Text("Follower"),
+                                  Text("10.2K"),
                                 ],
                               ),
-                              SizedBox(width: 21,),
-                              Row(
+                              SizedBox(width: 45,),
+                              Column(
                                 children: <Widget>[
-                                  // Image.asset(
-                                  //   "assets/test.png",
-                                  //   height: 3 * SizeConfig.heightMultiplier,
-                                  //   width: 3 * SizeConfig.widthMultiplier,
-                                  // ),
-                                  SizedBox(width: 5,),
-                                  Text("Protorix"),
+                                  Text("Following"),
+                                  Text("543"),
                                 ],
-                              )
+                              ),
+                              SizedBox(width: 40,),
+                              Container(
+                                decoration: BoxDecoration(
+                                  border: Border.all(color: Colors.white60),
+                                  borderRadius: BorderRadius.circular(5.0),
+                                ),
+                                child: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Text("설정", style: TextStyle(
+                                      color: MainColor.w,
+                                  ),),
+                                ),
+                              ),
                             ],
-                          )
+                          ),
                         ],
                       )
-                    ],
-                  ),
-                  SizedBox(height: 6,),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                      Column(
-                        children: <Widget>[
-                          Text("10.2K"),
-                          Text("Protorix"),
-                        ],
-                      ),
-                      Column(
-                        children: <Widget>[
-                          Text("543"),
-                          Text("Following"),
-                        ],
-                      ),
-                      Container(
-                        decoration: BoxDecoration(
-                          border: Border.all(color: Colors.white60),
-                          borderRadius: BorderRadius.circular(5.0),
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Text("EDIT PROFILE", style: TextStyle(
-                              color: Colors.white60,
-                              fontSize: 5
-                          ),),
-                        ),
-                      ),
                     ],
                   ),
                 ],
               ),
             ),
           ),
-
-        //   Padding(
-        //     padding:  EdgeInsets.only(top: 35 * SizeConfig.heightMultiplier),
-        //     child: Container(
-        //       width: MediaQuery.of(context).size.width,
-        //       decoration: BoxDecoration(
-        //           color: Colors.white,
-        //           borderRadius: BorderRadius.only(
-        //             topRight: Radius.circular(30.0),
-        //             topLeft: Radius.circular(30.0),
-        //           )
-        //       ),
-        //     ),
-        //   )
-        //
-        // ],
-      //),
-
+          Center(
+            child: Image.asset('assets/skilltree.jpg'),
+          ),
+        ]
+      )
     );
   }
 

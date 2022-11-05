@@ -17,7 +17,7 @@ class _BottomNaviState extends State<BottomNavi> {
   int _selectedIndex = 0;
   late final List<Widget> _widgetOptions = <Widget>[
     Text(
-      'Index 0: cmnt - forum1)',
+      'Index 0: cmnt - forum1)',//Forum1()
     ),
     Text(
       'Index 1: reels',
@@ -58,6 +58,11 @@ class _BottomNaviState extends State<BottomNavi> {
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
+      floatingActionButton: _selectedIndex==0?FloatingActionButton(
+          child: Icon(Icons.add,),
+          backgroundColor:MainColor.teal,
+          onPressed: (){}
+      ):null,
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
@@ -83,8 +88,9 @@ class _BottomNaviState extends State<BottomNavi> {
         child: ListView(
           padding: EdgeInsets.zero,
           children: [
-            DrawerHeader(
-              child: Text(_username),
+            UserAccountsDrawerHeader(
+              accountName: Text("User 고유한 닉name"),
+              accountEmail: Text(_username),
               decoration: BoxDecoration(
                 color: MainColor.beige,
                 borderRadius: BorderRadius.only(
@@ -100,7 +106,7 @@ class _BottomNaviState extends State<BottomNavi> {
               onTap: () {
                 setState(() {
                   _selectedIndex = 0;
-                  _widgetOptions[0]=Text('Index 0: cmnt - forum1)');
+                  _widgetOptions[0]=Text('Index 0: cmnt - forum1)');//Forum1();
                 });
                 Navigator.pop(context);
               },
