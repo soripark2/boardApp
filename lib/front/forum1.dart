@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:s3ex/constantlist/maincolor.dart';
 
 class Forum1 extends StatelessWidget{
   @override
